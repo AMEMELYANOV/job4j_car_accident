@@ -5,9 +5,8 @@
 <html>
 <head>
     <title>Accident</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
@@ -23,20 +22,24 @@
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                Hello : ${user}
+                <h3>Accidents</h3>
             </div>
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">String Data</th>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Наименование</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Адрес</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="str" items="${strings}" varStatus="counter">
+                <c:forEach var="entry" items="${accidents}" >
                     <tr>
-                        <td>${counter.count}</td>
-                        <td><c:out value="${str}"/></td>
+                        <td><c:out value="${entry.key}"/></td>
+                        <td><c:out value="${entry.value.name}"/></td>
+                        <td><c:out value="${entry.value.text}"/></td>
+                        <td><c:out value="${entry.value.address}"/></td>
                     </tr>
                 </c:forEach>
                 </tbody>
