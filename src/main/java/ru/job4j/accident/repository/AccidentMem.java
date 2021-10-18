@@ -3,6 +3,7 @@ package ru.job4j.accident.repository;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Accident;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class AccidentMem {
         accidents.put(2, accident2);
     }
 
-    public Map<Integer, Accident> getAccidents() {
-        return accidents;
+    public Collection<Accident> getAccidents() {
+        return accidents.values();
     }
 }

@@ -49,12 +49,11 @@ public class Accident {
             return false;
         }
         Accident accident = (Accident) o;
-        return id == accident.id && Objects.equals(name, accident.name)
-                && Objects.equals(text, accident.text) && Objects.equals(address, accident.address);
+        return id == accident.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, text, address);
+        return Objects.hash(id);
     }
 }
