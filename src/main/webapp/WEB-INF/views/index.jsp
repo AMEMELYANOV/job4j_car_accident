@@ -34,15 +34,20 @@
                     <th scope="col">Название</th>
                     <th scope="col">Описание</th>
                     <th scope="col">Адрес</th>
+                    <th scope="col">Редактирование</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="accident" items="${accidents}">
                     <tr>
                         <td><c:out value="${accident.id}"/></td>
-                        <td><c:out value="${accident.name}"/></td>
+                        <td>
+                            <c:out value="${accident.name}"/>
+                        </td>
                         <td><c:out value="${accident.text}"/></td>
                         <td><c:out value="${accident.address}"/></td>
+                        <td><a class="btn btn-primary" href=
+                                "<c:url value='/update?id=${accident.id}'/>">Редактирование</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

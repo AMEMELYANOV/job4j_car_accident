@@ -26,24 +26,23 @@
                 <table>
                     <tr>
                         <td>Название:</td>
-                        <td><input type='text' name='name'></td>
+                        <td><input type='text' name='name' required></td>
                     </tr>
                     <tr>
                         <td>Описание:</td>
-                        <td><input type='text' name='text'></td>
+                        <td><input type='text' name='text' required></td>
                     </tr>
                     <tr>
                         <td>Адрес:</td>
-                        <td><input type='text' name='address'></td>
+                        <td><input type='text' name='address' required></td>
                     </tr>
-
                     <tr>
                         <td colspan='2'><input name="submit" type="submit" value="Сохранить"/></td>
                     </tr>
                 </table>
+            </form>
         </div>
     </div>
 </div>
-</form>
 </body>
 </html>

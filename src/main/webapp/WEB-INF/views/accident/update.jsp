@@ -16,27 +16,26 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container pt-3">
+<div class="container pt-3 pt-3 py-3 mx-auto">
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                <h3>Редактирование нарушения</h3>
+                <h3>Проект Автонарушения. Форма для редактирования.</h3>
             </div>
-            <form action="<c:url value='/save'/>" method='POST'>
+            <form action="<c:url value='/save?id=${accident.id}'/>" method='POST'>
                 <table>
                     <tr>
                         <td>Название:</td>
-                        <td><input type='text' name='name' required></td>
+                        <td><input type='text' name='name' value="${accident.name}" required></td>
                     </tr>
                     <tr>
                         <td>Описание:</td>
-                        <td><input type='text' name='text' required></td>
+                        <td><input type='text' name='text' value="${accident.text}" required></td>
                     </tr>
                     <tr>
                         <td>Адрес:</td>
-                        <td><input type='text' name='address' required></td>
+                        <td><input type='text' name='address' value="${accident.address}" required></td>
                     </tr>
-
                     <tr>
                         <td colspan='2'><input name="submit" type="submit" value="Сохранить"/></td>
                     </tr>
