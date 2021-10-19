@@ -19,19 +19,21 @@ public class AccidentControl {
     }
 
     @GetMapping("/create")
-    public String create() {
+    public String create(Model model) {
+        model.addAttribute("types", accidentService.getAccidentTypes());
         return "accident/create";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute Accident accident) {
-        accidentService.create(accident);
+        accidentService.createAccident(accident);
         return "redirect:/";
     }
 
     @GetMapping("/update")
     public String update(@RequestParam("id") int id, Model model) {
-        model.addAttribute("accident", accidentService.findById(id));
+        model.addAttribute("accident", accidentService.findAccidentById(id));
+        model.addAttribute("types", accidentService.getAccidentTypes());
         return "accident/update";
     }
 }

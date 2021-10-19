@@ -2,12 +2,17 @@ package ru.job4j.accident.model;
 
 import java.util.Objects;
 
-public class Accident {
+public class AccidentType {
     private int id;
+
     private String name;
-    private String text;
-    private String address;
-    private AccidentType type;
+
+    public static AccidentType of(int id, String name) {
+        AccidentType type = new AccidentType();
+        type.id = id;
+        type.name = name;
+        return type;
+    }
 
     public int getId() {
         return id;
@@ -25,30 +30,6 @@ public class Accident {
         this.name = name;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public AccidentType getType() {
-        return type;
-    }
-
-    public void setType(AccidentType type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -57,8 +38,8 @@ public class Accident {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Accident accident = (Accident) o;
-        return id == accident.id;
+        AccidentType that = (AccidentType) o;
+        return id == that.id;
     }
 
     @Override

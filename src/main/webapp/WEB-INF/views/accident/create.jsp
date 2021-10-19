@@ -20,7 +20,7 @@
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                <h3>Создание нарушения</h3>
+                <h3>Проект Автонарушения. Создание нарушения.</h3>
             </div>
             <form action="<c:url value='/save'/>" method='POST'>
                 <table>
@@ -35,6 +35,15 @@
                     <tr>
                         <td>Адрес:</td>
                         <td><input type='text' name='address' required></td>
+                    </tr>
+                    <tr>
+                        <td>Тип:</td>
+                        <td>
+                            <select name="type.id">
+                                <c:forEach var="type" items="${types}" >
+                                    <option value="${type.id}">${type.name}</option>
+                                </c:forEach>
+                            </select>
                     </tr>
                     <tr>
                         <td colspan='2'><input name="submit" type="submit" value="Сохранить"/></td>

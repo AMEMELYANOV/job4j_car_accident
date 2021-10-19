@@ -19,4 +19,5 @@ public class IndexControl {
         model.addAttribute("accidents", accidentService.getAccidents());
         return "index";
     }
+
 }
