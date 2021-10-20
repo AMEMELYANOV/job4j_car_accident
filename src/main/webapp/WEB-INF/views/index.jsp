@@ -19,12 +19,12 @@
 </head>
 <body>
 <div class="container pt-3 pt-3 py-3 mx-auto">
-    <div class="row" >
+    <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
                 <h3>Проект Автонарушения</h3>
             </div>
-            <div class="col pt-2 mx-2 px-2 my-1 py-1" >
+            <div class="col pt-2 mx-2 px-2 my-1 py-1">
                 <a class="btn btn-primary" href="<c:url value='/create'/>">Добавить нарушение</a>
             </div>
             <table class="table">
@@ -35,6 +35,7 @@
                     <th scope="col">Описание</th>
                     <th scope="col">Адрес</th>
                     <th scope="col">Тип</th>
+                    <th scope="col">Статьи</th>
                     <th scope="col">Редактирование</th>
                 </tr>
                 </thead>
@@ -48,6 +49,12 @@
                         <td><c:out value="${accident.text}"/></td>
                         <td><c:out value="${accident.address}"/></td>
                         <td><c:out value="${accident.type.name}"/></td>
+                        <td>
+                            <c:forEach var="rule" items="${accident.rules}">
+                                <c:out value="${rule.name}"/>
+                                <br>
+                            </c:forEach>
+                        </td>
                         <td><a class="btn btn-primary" href=
                                 "<c:url value='/update?id=${accident.id}'/>">Редактирование</a></td>
                     </tr>
