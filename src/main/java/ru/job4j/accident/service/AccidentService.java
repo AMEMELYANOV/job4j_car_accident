@@ -29,15 +29,15 @@ public class AccidentService {
         return accidentMem.findAccidentById(id);
     }
 
-    public Collection<AccidentType> findAccidentTypes() {
-        return accidentMem.findAccidentTypes();
+    public Collection<AccidentType> getAccidentTypes() {
+        return accidentMem.getAccidentTypes();
     }
 
     public AccidentType findAccidentTypeById(int id) {
         return accidentMem.findAccidentTypeById(id);
     }
 
-    public Collection<Rule> findRules() {
-        return accidentMem.findRules();
+    public Collection<Rule> getRules() {
+        return accidentMem.getRules();
     }
 }

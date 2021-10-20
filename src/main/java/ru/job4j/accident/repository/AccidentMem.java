@@ -70,7 +70,7 @@ public class AccidentMem {
         return accidents.get(id);
     }
 
-    public Collection<AccidentType> findAccidentTypes() {
+    public Collection<AccidentType> getAccidentTypes() {
         return types.values();
     }
 
@@ -78,7 +78,7 @@ public class AccidentMem {
         return types.get(id);
     }
 
-    public Collection<Rule> findRules() {
+    public Collection<Rule> getRules() {
         return rules.values();
     }
 
