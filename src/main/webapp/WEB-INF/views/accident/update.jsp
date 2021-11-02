@@ -17,6 +17,16 @@
 </head>
 <body>
 <div class="container pt-3 pt-3 py-3 mx-auto">
+    <div class="row justify-content-end">
+        <div class="col-2 align-self-center">
+            Вы вошли как : ${user.username}
+        </div>
+        <div class="col-2 align-self-center">
+            <a class="btn btn-link" href="<c:url value='/logout'/>">Выйти</a>
+        </div>
+    </div>
+</div>
+<div class="container pt-3 pt-3 py-3 mx-auto">
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
