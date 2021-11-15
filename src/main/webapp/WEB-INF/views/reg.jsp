@@ -16,24 +16,14 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container pt-3 pt-3 py-3 mx-auto">
+<div class="container pt-3">
     <div class="row">
-        <div class="row justify-content-end">
-            <div class="col-2 align-self-center">
-                <a href="<c:url value='/reg'/>">Регистрация</a>
-            </div>
-        </div>
         <div class="card" style="width: 100%">
             <div class="card-header">
-                <h3>Проект Автонарушения</h3>
+                <h3>Проект Автонарушения. Регистрация пользователя.</h3>
             </div>
-            <c:if test="${not empty errorMessage}">
-                <div style="color:red; font-weight: bold; margin: 30px 0px;">
-                        ${errorMessage}
-                </div>
-            </c:if>
-            <form name='login' action="<c:url value='/login'/>" method='POST'>
-                <table class="table">
+            <form name='login' action="<c:url value='/reg'/>" method='POST'>
+                <table>
                     <tr>
                         <td>UserName:</td>
                         <td><input type='text' name='username'></td>
@@ -46,7 +36,6 @@
                         <td colspan='2'><input name="submit" type="submit" value="submit"/></td>
                     </tr>
                 </table>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
         </div>
     </div>
